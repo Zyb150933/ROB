@@ -1,1 +1,63 @@
-loadstring(game:HttpGet("https://pastefy.app/Bcez6V44/raw"))()
+-- 创建弹窗容器
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "UpdateNotice"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+-- 弹窗背景框
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- 深灰色背景
+MainFrame.BackgroundTransparency = 0.1
+MainFrame.BorderColor3 = Color3.fromRGB(255, 0, 0) -- 红色边框
+MainFrame.BorderSizePixel = 2
+MainFrame.Size = UDim2.new(0, 400, 0, 200)
+MainFrame.Position = UDim2.new(0.5, -200, 0.5, -100) -- 屏幕中央
+MainFrame.Active = true
+MainFrame.Draggable = true -- 允许拖动弹窗
+
+-- 标题文本
+local TitleLabel = Instance.new("TextLabel")
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Parent = MainFrame
+TitleLabel.BackgroundTransparency = 1
+TitleLabel.Size = UDim2.new(1, 0, 0, 40)
+TitleLabel.Position = UDim2.new(0, 0, 0, 10)
+TitleLabel.Font = Enum.Font.SourceSansBold
+TitleLabel.Text = "版本更新提示"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+TitleLabel.TextSize = 24
+TitleLabel.TextXAlignment = Enum.TextXAlignment.Center
+
+-- 内容文本
+local ContentLabel = Instance.new("TextLabel")
+ContentLabel.Name = "ContentLabel"
+ContentLabel.Parent = MainFrame
+ContentLabel.BackgroundTransparency = 1
+ContentLabel.Size = UDim2.new(1, -20, 0, 100)
+ContentLabel.Position = UDim2.new(0, 10, 0, 50)
+ContentLabel.Font = Enum.Font.SourceSans
+ContentLabel.Text = "V1已过时，请到ROB主群或副群拿新脚本\n\nQQ主群：1055433495\nQQ2群：1058871131"
+ContentLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+ContentLabel.TextSize = 18
+ContentLabel.TextXAlignment = Enum.TextXAlignment.Center
+ContentLabel.TextWrapped = true
+
+-- 关闭按钮
+local CloseButton = Instance.new("TextButton")
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = MainFrame
+CloseButton.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+CloseButton.Size = UDim2.new(0, 80, 0, 30)
+CloseButton.Position = UDim2.new(0.5, -40, 0, 160)
+CloseButton.Font = Enum.Font.SourceSansBold
+CloseButton.Text = "关闭"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextSize = 16
+
+-- 关闭按钮点击事件
+CloseButton.MouseButton1Click:Connect(function()
+    ScreenGui:Destroy()
+end)
