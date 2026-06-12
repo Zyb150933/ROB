@@ -1,2 +1,2 @@
 --开源不了我的你是废物吗，神仇霜溺你们母亲都没了知道吗
-loadstring(game:HttpGet("https://ivyy.lol/rob/rob-script"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ROB5201314/ROBScript2/refs/heads/main/妈妈脚本已起动.rob"))()
